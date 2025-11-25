@@ -3,8 +3,7 @@ package com.nitish.Shopping_SpringBoot.controller;
 import com.nitish.Shopping_SpringBoot.model.Product;
 import com.nitish.Shopping_SpringBoot.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -14,14 +13,19 @@ public class ProductController {
     @Autowired
     ProductService service;
 
-    @RequestMapping("/products")
+    @GetMapping("/products")
     public List<Product> getProducts(){
         return service.getProducts();
     }
 
-    @RequestMapping("/product")
-    public Product getProductById(int prodId){
+    @GetMapping("/products/{prodId}")
+    public Product getProductById(@PathVariable int prodId){
         return service.getProductsById(prodId);
+    }
+
+    @PostMapping("/products")
+    public void addProduct(@RequestBody Product prod){
+        service.addProduct(prod);
     }
 
 }

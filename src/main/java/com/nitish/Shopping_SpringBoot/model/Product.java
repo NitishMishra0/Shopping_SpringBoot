@@ -43,4 +43,13 @@ public class Product {
     public void setProdName(String prodName) {
         this.prodName = prodName;
     }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "prodId=" + prodId +
+                ", prodName='" + prodName + '\'' +
+                ", price=" + price +
+                '}';
+    }
 }
