@@ -1,4 +1,4 @@
-package com.nitish.Shopping_SpringBoot;
+package com.nitish.Shopping_SpringBoot.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
